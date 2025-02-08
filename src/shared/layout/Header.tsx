@@ -1,32 +1,48 @@
+import { useState } from "react";
+
 import { AiOutlineMenu } from "react-icons/ai";
+import { IoMdClose } from "react-icons/io";
+
+import { Link } from "react-router";
 
 const Header = () => {
+
+    const [menuDisplay, setMenuDisplay] = useState(false);
+
     return (
         <header className="p-8 text-white bg-[#080808] sticky top-0 z-30">
             <div className="w-full max-w-[1600px] mx-auto flex items-center gap-4">
                 <div className="grow basis-0">
-                    <a href="#" className="font-bold text-lg uppercase italic">
-                        Pastrainer
-                    </a>
+                    <Link to="/" className="font-extrabold text-lg uppercase italic flex gap-1 items-center w-fit">
+                        PAS<span className="text-black bg-lime-500 px-1">TRAINER</span>
+                    </Link>
                 </div>
-                <nav className="hidden lg:block">
-                    <ul className="flex gap-8 uppercase text-sm">
+                <nav className={"top-0 left-0 flex justify-center items-center w-full h-full xl:top-auto xl:left-auto xl:w-auto xl:h-auto bg-black xl:bg-transparent " + (menuDisplay ? "fixed xl:relative -z-10 xl:z-0" : "hidden xl:block")}>
+                    <ul className="flex gap-8 uppercase text-sm flex-col text-center xl:flex-row">
                         <li>
-                            <a href="/#about" className="hover:text-lime-500 transition-colors">Acerca de Mi</a>
+                            <Link reloadDocument to="/#about" className="hover:text-lime-500 transition-colors menu-item" onClick={() => setMenuDisplay(false)}>Acerca de Mi</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-lime-500 transition-colors">Planificaciones</a>
+                            <Link reloadDocument to="/#plans" className="hover:text-lime-500 transition-colors menu-item" onClick={() => setMenuDisplay(false)}>Planificaciones</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-lime-500 transition-colors">Testimonios</a>
+                            <Link reloadDocument to="/#testimonials" className="hover:text-lime-500 transition-colors menu-item" onClick={() => setMenuDisplay(false)}>Testimonios</Link>
+                        </li>
+                        <li>
+                            <Link to="/calculator" className="hover:text-lime-500 transition-colors menu-item" onClick={() => setMenuDisplay(false)}>Calculadora Macros</Link>
+                        </li>
+                        <li>
+                            <button className="flex sm:hidden px-3 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit menu-item" onClick={() => setMenuDisplay(false)}>PRUEBA GRATIS</button>
                         </li>
                     </ul>
                 </nav>
                 <div className="flex grow basis-0 items-center justify-end gap-8">
                     <button className="hidden sm:flex px-3 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit">PRUEBA GRATIS</button>
-                    <button className="flex text-3xl lg:hidden">
-                        <AiOutlineMenu />
-                    </button>
+                    {menuDisplay ? (
+                        <button className="flex text-3xl xl:hidden" onClick={() => setMenuDisplay(false)}><IoMdClose /></button>
+                    ) : (
+                        <button className="flex text-3xl xl:hidden" onClick={() => setMenuDisplay(true)}><AiOutlineMenu /></button>
+                    )}
                 </div>
             </div>
         </header>
