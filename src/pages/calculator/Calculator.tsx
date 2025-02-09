@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -13,6 +13,10 @@ const Calculator = () => {
     const [physicActivity, setPhysicActivity] = useState('')
     const [objective, setObjective] = useState('')
     const [error, setError] = useState("")
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const showResults = () => {
 
