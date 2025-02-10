@@ -27,45 +27,62 @@ const Home = () => {
 
     const Plans = [
         {
-            id: "free",
-            name: "GRATUITO",
-            price: 0,
+            id: "1mes",
+            name: "1 MES",
+            description: "Programa Básico",
+            price: 1700,
             includes: [
-                "ITEM_1",
-                "ITEM_2",
-                "ITEM_3",
-                "ITEM_4",
+                "Planificación personalizada acorde a tus objetivos.",
+                "Videos explicativos de los ejercicios y técnicas de realización.",
+                "Videos y entrenamiento de core y abdomen.",
+                "Ejercicios de movilidad pre entrenamiento y post entrenamiento.",
+                "Acceso a grupo privado de wpp.",
+                "Soporte 24/7 para sacar cualquier duda.",
+                "Seguimiento y motivación semanal.",
             ],
+            preview: "IMG_3810.webp",
             link: "https://wa.link/pfqz9r",
         },
         {
-            id: "30days",
-            name: "30 DÍAS",
-            price: 5200,
+            id: "3meses",
+            name: "3 MESES",
+            description: "Programa Completo",
+            price: 5000,
             includes: [
-                "ITEM_1",
-                "ITEM_2",
-                "ITEM_3",
-                "ITEM_4",
-                "ITEM_5",
-                "ITEM_6",
+                "Planificación personalizada acorde a tus objetivos.",
+                "Calculadora de macronutrientes.",
+                "Videos explicativos de los ejercicios y técnicas de realización.",
+                "Videos y entrenamiento de core (zona media y abdominales).",
+                "Guia de alimentacion.",
+                "Ejercicios de movilidad pre entrenamiento y post entrenamiento.",
+                "Documentos y videos para aprender a entrenar.",
+                "Acceso a grupo privado de wpp.",
+                "Soporte 24/7 para sacar cualquier duda.",
+                "Seguimiento y motivación semanal.",
+                "Llamadas y reportes semanales.",
             ],
+            preview: "IMG_3809.webp",
             link: "https://wa.link/pfqz9r",
         },
         {
-            id: "90days",
-            name: "90 DÍAS",
-            price: 8500,
+            id: "6meses",
+            name: "6 MESES",
+            description: "Programa Completo",
+            price: 9000,
             includes: [
-                "ITEM_1",
-                "ITEM_2",
-                "ITEM_3",
-                "ITEM_4",
-                "ITEM_5",
-                "ITEM_6",
-                "ITEM_7",
-                "ITEM_8",
+                "Planificación personalizada acorde a tus objetivos.",
+                "Calculadora de macronutrientes.",
+                "Videos explicativos de los ejercicios y técnicas de realización.",
+                "Videos y entrenamiento de core (zona media y abdominales).",
+                "Guia de alimentacion.",
+                "Ejercicios de movilidad pre entrenamiento y post entrenamiento.",
+                "Documentos y videos para aprender a entrenar.",
+                "Acceso a grupo privado de wpp.",
+                "Soporte 24/7 para sacar cualquier duda.",
+                "Seguimiento y motivación semanal.",
+                "Llamadas y reportes semanales.",
             ],
+            preview: "IMG_3824.webp",
             link: "https://wa.link/pfqz9r",
         },
     ]
@@ -100,7 +117,7 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        if (locationR.pathname.startsWith('/plans/'))
+        if (locationR.pathname.startsWith('/plan/'))
             Plans.forEach((p, i) => {
                 if (p.id == id) {
                     setPlansModal(i)
@@ -123,7 +140,7 @@ const Home = () => {
 
                         <p className="text-gray-300 my-4 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo quae distinctio, voluptates voluptatem facere architecto laudantium repudiandae. Recusandae, numquam!</p>
 
-                        <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plans/free")}>PRUEBA GRATIS</button>
+                        <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plan/free")}>PRUEBA GRATIS</button>
 
                         <div className="mt-8 flex flex-wrap gap-8 gap-x-16">
                             <div className="flex flex-col gap-2">
@@ -153,10 +170,14 @@ const Home = () => {
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold italic">ACERCA <span className='text-black bg-lime-500 px-2'>DE MI</span></h2>
                     <hr className="my-8 border-lime-500 w-[100px]" />
 
-                    <p className="my-4 text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, fugit doloremque? Molestias debitis earum vero voluptas in eaque et omnis. Necessitatibus beatae voluptates dicta reprehenderit in quae cum quidem nihil!</p>
-                    <p className="my-4 text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus voluptatem obcaecati ipsam perspiciatis soluta unde dolor ex, temporibus in animi consequuntur veniam enim impedit? Id tempora magnam mollitia inventore, aut cumque. Veritatis necessitatibus perspiciatis, sunt sit distinctio similique odio voluptates?</p>
+                    <p className="my-4 text-gray-300">Soy <span className='text-lime-500 italic'>Ramiro Pastrana</span>, desde mi infancia, siempre he sido un apasionado de los deportes. Desde el fútbol hasta la natación, he disfrutado de cualquier actividad física que se me cruzara en el camino.
+                    </p>
+                    <p className="my-4 text-gray-300">Hoy en día, soy <span className='text-lime-500 italic'>Licenciado en Educación física deporte y recreación</span>, entrenador personal y preparador físico. Disfruto cada momento de mi trabajo, donde tengo la oportunidad de ayudar a las personas a alcanzar sus metas y objetivos. Para mí, el entrenamiento va más allá de levantar pesas o correr en una cinta, es un estilo de vida que impulsa el bienestar físico, mental y emocional.
+                    </p>
+                    <p className="my-4 text-gray-300">Mi historia es un testimonio de cómo el compromiso y la pasión pueden llevar a grandes logros, tanto dentro como fuera del gimnasio.
+                    </p>
 
-                    <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plans/free")}>PRUEBA GRATIS</button>
+                    <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plan/1mes")}>PRUEBA GRATIS</button>
                 </div>
                 <div className='w-full relative'>
                     <div className='relative max-w-[500px] mx-auto'>
@@ -178,48 +199,20 @@ const Home = () => {
                     <p className="my-4 text-gray-300 max-w-[1000px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, fugit doloremque? Molestias debitis earum vero voluptas in eaque et omnis. Necessitatibus beatae voluptates dicta reprehenderit in quae cum quidem nihil!</p>
 
                     <div className='flex flex-wrap gap-12 py-8'>
-                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3810.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/free")}>
-                            <div className='flex flex-col gap-4'>
-                                <h4 className='text-5xl font-extrabold italic'>
-                                    PLAN <br />
-                                    <span className='bg-lime-500 text-black text-4xl px-2'>GRATUITO</span>
-                                </h4>
-                                <h5 className='text-5xl font-bold italic'>$0</h5>
+                        {Plans.map(plan => (
+                            <div className={"flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/" + plan.preview + "')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10"} onClick={() => navigate("/plan/" + plan.id)}>
+                                <div className='flex flex-col gap-4'>
+                                    <h4 className='text-5xl font-extrabold italic'>
+                                        PLAN <br />
+                                        <span className='bg-lime-500 text-black text-4xl px-2'>{plan.name}</span>
+                                    </h4>
+                                </div>
+                                <div className='flex flex-col w-full'>
+                                    <h5 className='text-4xl font-bold italic'>${plan.price.toLocaleString('es-UY')}</h5>
+                                    <p className='text-gray-300'>{plan.description}</p>
+                                </div>
                             </div>
-                            <div className='flex items-end w-full'>
-                                <p className='text-gray-300'>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3809.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/30days")}>
-                            <div className='flex flex-col gap-4'>
-                                <h4 className='text-5xl font-extrabold italic'>
-                                    PLAN <br />
-                                    <span className='bg-lime-500 text-black text-4xl px-2'>30 DÍAS</span>
-                                </h4>
-                                <h5 className='text-5xl font-bold italic'>$5.200</h5>
-                            </div>
-                            <div className='flex items-end w-full'>
-                                <p className='text-gray-300'>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3824.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/90days")}>
-                            <div className='flex flex-col gap-4'>
-                                <h4 className='text-5xl font-extrabold italic'>
-                                    PLAN <br />
-                                    <span className='bg-lime-500 text-black text-4xl px-2'>90 DÍAS</span>
-                                </h4>
-                                <h5 className='text-5xl font-bold italic'>$8.500</h5>
-                            </div>
-                            <div className='flex items-end w-full'>
-                                <p className='text-gray-300'>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-
-                            </div>
-                        </div>
-
+                        ))}
                     </div>
                 </div>
             </section>
@@ -242,7 +235,7 @@ const Home = () => {
                         ))}
                     </div>
 
-                    <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plans/free")}>PRUEBA GRATIS</button>
+                    <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plan/free")}>PRUEBA GRATIS</button>
                 </div>
             </section>
 
@@ -267,7 +260,7 @@ const Home = () => {
                                 <h5 className='text-4xl mt-2 font-bold italic'>${Plans[plan].price.toLocaleString('es-UY')}</h5>
                             </div>
                             <p className='italic mt-8 font-bold uppercase'>INCLUYE ({Plans[plan].includes.length}):</p>
-                            <ul className='list-decimal pl-6 italic uppercase font-medium flex flex-col gap-3 mt-4 max-h-[230px] overflow-auto'>
+                            <ul className='list-decimal pl-6 italic font-medium flex flex-col gap-3 mt-4 max-h-[230px] overflow-auto'>
                                 {Plans[plan].includes.map(i => (
                                     <li className='text-gray-300 text-sm' key={i}>{i}</li>
                                 ))}

@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')!).render(
     <Header />
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='plans/:id' element={<Home />} />
+      <Route path='plan/:id' element={<Home />} />
       <Route path='calculator' element={<Calculator />} />
     </Routes>
     <Footer />

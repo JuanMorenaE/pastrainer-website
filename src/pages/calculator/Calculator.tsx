@@ -5,7 +5,9 @@ import { AnimatePresence, motion } from "motion/react";
 const Calculator = () => {
 
     const [modal, setModal] = useState(false)
+
     const [calories, setCalories] = useState(0);
+
     const [age, setAge] = useState('')
     const [weight, setWeight] = useState('')
     const [size, setSize] = useState('')
@@ -47,8 +49,9 @@ const Calculator = () => {
 
         setError('');
 
-        if (gender == "0") setCalories(((65 + (9.6 * parseFloat(weight.replace(',', '.')))) + ((1.8 * parseInt(size)) - (4.7 * parseInt(age))) * parseFloat(physicActivity)) + parseInt(objective))
-        else if (gender == "1") setCalories(((66 + (13.7 * parseFloat(weight.replace(',', '.')))) + ((5 * parseInt(size)) - (6.8 * parseInt(age))) * parseFloat(physicActivity)) + + parseInt(objective))
+        if (gender == "0") setCalories(((65 + (9.6 * parseFloat(weight.replace(',', '.')))) + ((1.8 * parseInt(size)) - (4.7 * parseInt(age))) * parseFloat(physicActivity)) + parseInt(objective));
+        else if (gender == "1") setCalories(((66 + (13.7 * parseFloat(weight.replace(',', '.')))) + ((5 * parseInt(size)) - (6.8 * parseInt(age))) * parseFloat(physicActivity)) + + parseInt(objective));
+
         setModal(true);
 
     }
@@ -103,24 +106,24 @@ const Calculator = () => {
                         <span className="italic font-medium">NIVEL DE ACTIVIDAD FÍSICA</span>
                         <div className="flex flex-col gap-4">
                             <label htmlFor="level_sedentary" className={"flex gap-4 items-center border border-gray-300 px-4 py-3 cursor-pointer " + (error == "physicActivity" ? "border-red-400" : "border-gray-300")}>
-                                <input type="radio" onChange={() => { setPhysicActivity("1.2") }} className="outline-none w-4 h-4" name="physic_activity" id="level_sedentary" />
+                                <input type="radio" onChange={() => { setPhysicActivity("1.375") }} className="outline-none w-4 h-4" name="physic_activity" id="level_sedentary" />
                                 <div>
-                                    <h3 className="font-medium italic">SEDENTARIO</h3>
-                                    <span className="text-sm text-gray-300">Poco o nada de ejercicio.</span>
+                                    <h3 className="font-medium italic">POCO ACTIVO</h3>
+                                    <span className="text-sm text-gray-300">Ejericio de 1 a 3 días por semana.</span>
                                 </div>
                             </label>
                             <label htmlFor="level_active" className={"flex gap-4 items-center border border-gray-300 px-4 py-3 cursor-pointer " + (error == "physicActivity" ? "border-red-400" : "border-gray-300")}>
-                                <input type="radio" onChange={() => { setPhysicActivity("1.45") }} className="outline-none w-4 h-4" name="physic_activity" id="level_active" />
+                                <input type="radio" onChange={() => { setPhysicActivity("1.55") }} className="outline-none w-4 h-4" name="physic_activity" id="level_active" />
                                 <div>
                                     <h3 className="font-medium italic">ACTIVO</h3>
-                                    <span className="text-sm text-gray-300">Ejercicio de 1 a 4 días por semana.</span>
+                                    <span className="text-sm text-gray-300">Ejercicio de 3 a 5 días por semana.</span>
                                 </div>
                             </label>
                             <label htmlFor="level_veryactive" className={"flex gap-4 items-center border border-gray-300 px-4 py-3 cursor-pointer " + (error == "physicActivity" ? "border-red-400" : "border-gray-300")}>
                                 <input type="radio" onChange={() => { setPhysicActivity("1.725") }} className="outline-none w-4 h-4" name="physic_activity" id="level_veryactive" />
                                 <div>
                                     <h3 className="font-medium italic">MUY ACTIVO</h3>
-                                    <span className="text-sm text-gray-300">Ejercicio de 5 a 7 días por semana.</span>
+                                    <span className="text-sm text-gray-300">Ejercicio de 6 a 7 días por semana.</span>
                                 </div>
                             </label>
                         </div>
@@ -128,16 +131,16 @@ const Calculator = () => {
                     <div className="flex flex-col gap-4">
                         <span className="italic font-medium">OBJETIVO</span>
                         <div className="flex flex-col gap-4">
+                            <label htmlFor="objective_definition" className={"flex gap-4 border border-gray-300 p-4 items-center cursor-pointer " + (error == "objective" ? "border-red-400" : "border-gray-300")}>
+                                <input type="radio" onChange={() => { setObjective("-300") }} className="outline-none w-4 h-4" name="objective" id="objective_definition" />
+                                <h3 className="font-medium italic">DEFINICIÓN</h3>
+                            </label>
                             <label htmlFor="objective_maintenance" className={"flex gap-4 border border-gray-300 p-4 items-center cursor-pointer " + (error == "objective" ? "border-red-400" : "border-gray-300")}>
                                 <input type="radio" onChange={() => { setObjective("0") }} className="outline-none w-4 h-4" name="objective" id="objective_maintenance" />
                                 <h3 className="font-medium italic">MANTENIMIENTO</h3>
                             </label>
-                            <label htmlFor="objective_definition" className={"flex gap-4 border border-gray-300 p-4 items-center cursor-pointer " + (error == "objective" ? "border-red-400" : "border-gray-300")}>
-                                <input type="radio" onChange={() => { setObjective("-500") }} className="outline-none w-4 h-4" name="objective" id="objective_definition" />
-                                <h3 className="font-medium italic">DEFINICIÓN</h3>
-                            </label>
                             <label htmlFor="objective_volume" className={"flex gap-4 border border-gray-300 p-4 items-center cursor-pointer " + (error == "objective" ? "border-red-400" : "border-gray-300")}>
-                                <input type="radio" onChange={() => { setObjective("500") }} className="outline-none w-4 h-4" name="objective" id="objective_volume" />
+                                <input type="radio" onChange={() => { setObjective("300") }} className="outline-none w-4 h-4" name="objective" id="objective_volume" />
                                 <h3 className="font-medium italic">VOLUMEN</h3>
                             </label>
                         </div>
@@ -158,10 +161,24 @@ const Calculator = () => {
                         <div className="max-w-[400px] w-full flex flex-col gap-1 text-white p-12 bg-[#080808] border border-lime-500 relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10">
                             <button className="absolute top-2 right-2 z-10 text-xl p-2 flex justify-center items-center cursor-pointer" onClick={() => setModal(false)}><IoMdClose /></button>
                             <p className="font-medium italic">Tu consumo debería ser de:</p>
-                            <strong className="text-black bg-lime-500 w-fit p-1 font-extrabold italic text-4xl flex items-end gap-1">{calories.toFixed(2).toString().replace('.', ',')} <span className="text-medium text-xl">cal</span></strong>
+                            <strong className="text-black bg-lime-500 w-fit p-1 font-extrabold italic text-4xl flex items-end gap-1">{calories.toFixed(2).toString().replace('.', ',')} <span className="text-medium text-xl"> kcals</span></strong>
                             <p className="font-medium italic">por día.</p>
-                            <div>
-                                <span></span>
+                            <div className="flex flex-col gap-1 mt-8">
+                                <div className="flex justify-between items-end gap-2">
+                                    <p className="text-sm italic">Carbohidratos</p>
+                                    <hr className="grow mb-1 border-lime-500 border-dashed" />
+                                    <span className="font-xl font-bold italic">{(calories * 0.5).toFixed(0).toString().replace('.', ',')}g</span>
+                                </div>
+                                <div className="flex justify-between items-end gap-2">
+                                    <p className="text-sm italic">Proteínas</p>
+                                    <hr className="grow mb-1 border-lime-500 border-dashed" />
+                                    <span className="font-xl font-bold italic">{(calories * 0.35).toFixed(0).toString().replace('.', ',')}g</span>
+                                </div>
+                                <div className="flex justify-between items-end gap-2">
+                                    <p className="text-sm italic">Grasas Saludables</p>
+                                    <hr className="grow mb-1 border-lime-500 border-dashed" />
+                                    <span className="font-xl font-bold italic">{(calories * 0.15).toFixed(0).toString().replace('.', ',')}g</span>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
