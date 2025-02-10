@@ -10,7 +10,6 @@ import cambio_2 from '../../assets/images/Cambio-fisico-manu.webp'
 import cambio_3 from '../../assets/images/Santi-cambio-fisico.webp'
 
 import { FaInstagram } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 import { FaCopy } from "react-icons/fa";
@@ -70,6 +69,8 @@ const Home = () => {
             link: "https://wa.link/pfqz9r",
         },
     ]
+
+    const testimonials = [cambio_1, cambio_2, cambio_3]
 
     const setPlansModal = (plan: number) => {
         setPlan(plan)
@@ -137,9 +138,8 @@ const Home = () => {
                     </div>
                     <div className='h-full flex items-center my-auto gap-4 lg:gap-12 text-2xl flex-row lg:flex-col'>
                         <hr className='hidden lg:block h-[50px] border-l border-y-0 border-lime-500 w-[1px]' />
-                        <a href='#' className=''><FaInstagram /></a>
-                        <a href='#' className=''><FaFacebookF /></a>
-                        <a href='#' className=''><FaWhatsapp /></a>
+                        <a href='https://www.instagram.com/rami__pastrana/' target='_BLANK' className='hover:text-lime-500 transition-colors'><FaInstagram /></a>
+                        <a href='http://wa.me/+59892002729' target='_BLANK' className='hover:text-lime-500 transition-colors'><FaWhatsapp /></a>
                         <hr className='hidden lg:block h-[50px] border-l border-y-0 border-lime-500 w-[1px]' />
                     </div>
                 </div>
@@ -178,7 +178,7 @@ const Home = () => {
                     <p className="my-4 text-gray-300 max-w-[1000px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, fugit doloremque? Molestias debitis earum vero voluptas in eaque et omnis. Necessitatibus beatae voluptates dicta reprehenderit in quae cum quidem nihil!</p>
 
                     <div className='flex flex-wrap gap-12 py-8'>
-                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3807.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/free")}>
+                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3810.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/free")}>
                             <div className='flex flex-col gap-4'>
                                 <h4 className='text-5xl font-extrabold italic'>
                                     PLAN <br />
@@ -192,7 +192,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3807.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/30days")}>
+                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3809.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/30days")}>
                             <div className='flex flex-col gap-4'>
                                 <h4 className='text-5xl font-extrabold italic'>
                                     PLAN <br />
@@ -206,7 +206,7 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3807.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/90days")}>
+                        <div className="flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/IMG_3824.webp')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10" onClick={() => navigate("/plans/90days")}>
                             <div className='flex flex-col gap-4'>
                                 <h4 className='text-5xl font-extrabold italic'>
                                     PLAN <br />
@@ -235,24 +235,11 @@ const Home = () => {
                     <p className="my-4 text-gray-300 max-w-[1000px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, fugit doloremque? Molestias debitis earum vero voluptas in eaque et omnis. Necessitatibus beatae voluptates dicta reprehenderit in quae cum quidem nihil!</p>
 
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-8'>
-                        <div className='w-full h-full relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10'>
-                            <img src={cambio_1} alt="" className='w-full h-full object-cover relative border border-lime-500' />
-                        </div>
-                        <div className='w-full h-full relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10'>
-                            <img src={cambio_2} alt="" className='w-full h-full object-cover relative border border-lime-500' />
-                        </div>
-                        <div className='w-full h-full relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10'>
-                            <img src={cambio_3} alt="" className='w-full h-full object-cover relative border border-lime-500' />
-                        </div>
-                        <div className='w-full h-full relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10'>
-                            <img src={cambio_3} alt="" className='w-full h-full object-cover relative border border-lime-500' />
-                        </div>
-                        <div className='w-full h-full relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10'>
-                            <img src={cambio_3} alt="" className='w-full h-full object-cover relative border border-lime-500' />
-                        </div>
-                        <div className='w-full h-full relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10'>
-                            <img src={cambio_2} alt="" className='w-full h-full object-cover relative border border-lime-500' />
-                        </div>
+                        {testimonials.map(t => (
+                            <div key={t} className='w-full h-full relative after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10'>
+                                <img loading='lazy' src={t} alt="" className='w-full h-full object-cover relative border border-lime-500' />
+                            </div>
+                        ))}
                     </div>
 
                     <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plans/free")}>PRUEBA GRATIS</button>
@@ -282,7 +269,7 @@ const Home = () => {
                             <p className='italic mt-8 font-bold uppercase'>INCLUYE ({Plans[plan].includes.length}):</p>
                             <ul className='list-decimal pl-6 italic uppercase font-medium flex flex-col gap-3 mt-4 max-h-[230px] overflow-auto'>
                                 {Plans[plan].includes.map(i => (
-                                    <li key={i}>{i}</li>
+                                    <li className='text-gray-300 text-sm' key={i}>{i}</li>
                                 ))}
                             </ul>
                             <div className='flex gap-3 mt-6'>

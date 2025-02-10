@@ -160,6 +160,9 @@ const Calculator = () => {
                             <p className="font-medium italic">Tu consumo debería ser de:</p>
                             <strong className="text-black bg-lime-500 w-fit p-1 font-extrabold italic text-4xl flex items-end gap-1">{calories.toFixed(2).toString().replace('.', ',')} <span className="text-medium text-xl">cal</span></strong>
                             <p className="font-medium italic">por día.</p>
+                            <div>
+                                <span></span>
+                            </div>
                         </div>
                     </motion.div>
                 )}
