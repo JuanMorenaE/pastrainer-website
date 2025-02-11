@@ -9,10 +9,15 @@ import cambio_1 from '../../assets/images/Cambio-fisico-Facu.webp'
 import cambio_2 from '../../assets/images/Cambio-fisico-manu.webp'
 import cambio_3 from '../../assets/images/Santi-cambio-fisico.webp'
 
+import plan_1 from '../../assets/images/IMG_3810.webp'
+import plan_2 from '../../assets/images/IMG_3809.webp'
+import plan_3 from '../../assets/images/IMG_3824.webp'
+
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 import { FaCopy } from "react-icons/fa";
+import CTA from '../../shared/CTA';
 
 
 const Home = () => {
@@ -40,7 +45,7 @@ const Home = () => {
                 "Soporte 24/7 para sacar cualquier duda.",
                 "Seguimiento y motivación semanal.",
             ],
-            preview: "IMG_3810.webp",
+            preview: plan_1,
             link: "https://wa.link/pfqz9r",
         },
         {
@@ -61,7 +66,7 @@ const Home = () => {
                 "Seguimiento y motivación semanal.",
                 "Llamadas y reportes semanales.",
             ],
-            preview: "IMG_3809.webp",
+            preview: plan_2,
             link: "https://wa.link/pfqz9r",
         },
         {
@@ -82,7 +87,7 @@ const Home = () => {
                 "Seguimiento y motivación semanal.",
                 "Llamadas y reportes semanales.",
             ],
-            preview: "IMG_3824.webp",
+            preview: plan_3,
             link: "https://wa.link/pfqz9r",
         },
     ]
@@ -140,7 +145,7 @@ const Home = () => {
 
                         <p className="text-gray-300 my-4 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo quae distinctio, voluptates voluptatem facere architecto laudantium repudiandae. Recusandae, numquam!</p>
 
-                        <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plan/free")}>PRUEBA GRATIS</button>
+                        <CTA />
 
                         <div className="mt-8 flex flex-wrap gap-8 gap-x-16">
                             <div className="flex flex-col gap-2">
@@ -177,7 +182,7 @@ const Home = () => {
                     <p className="my-4 text-gray-300">Mi historia es un testimonio de cómo el compromiso y la pasión pueden llevar a grandes logros, tanto dentro como fuera del gimnasio.
                     </p>
 
-                    <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plan/1mes")}>PRUEBA GRATIS</button>
+                    <CTA />
                 </div>
                 <div className='w-full relative'>
                     <div className='relative max-w-[500px] mx-auto'>
@@ -200,17 +205,21 @@ const Home = () => {
 
                     <div className='flex flex-wrap gap-12 py-8'>
                         {Plans.map(plan => (
-                            <div className={"flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1)),url('./assets/images/" + plan.preview + "')] cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10"} onClick={() => navigate("/plan/" + plan.id)}>
-                                <div className='flex flex-col gap-4'>
-                                    <h4 className='text-5xl font-extrabold italic'>
-                                        PLAN <br />
-                                        <span className='bg-lime-500 text-black text-4xl px-2'>{plan.name}</span>
-                                    </h4>
+                            <div key={plan.id} className={"flex flex-col w-[350px] p-8 py-12 relative aspect-[3/4] bg-cover bg-center cursor-pointer border border-lime-800 justify-between after:absolute after:w-full after:h-full after:bg-lime-500 after:-top-2 after:-right-2 after:-z-10"} onClick={() => navigate("/plan/" + plan.id)}>
+                                <div className='relative flex flex-col justify-between z-[25] w-full h-full'>
+                                    <div className='flex flex-col gap-4'>
+                                        <h4 className='text-5xl font-extrabold italic'>
+                                            PLAN <br />
+                                            <span className='bg-lime-500 text-black text-4xl px-2'>{plan.name}</span>
+                                        </h4>
+                                    </div>
+                                    <div className='flex flex-col w-full'>
+                                        <h5 className='text-4xl font-bold italic'>${plan.price.toLocaleString('es-UY')}</h5>
+                                        <p className='text-gray-300'>{plan.description}</p>
+                                    </div>
                                 </div>
-                                <div className='flex flex-col w-full'>
-                                    <h5 className='text-4xl font-bold italic'>${plan.price.toLocaleString('es-UY')}</h5>
-                                    <p className='text-gray-300'>{plan.description}</p>
-                                </div>
+                                <span className='bg-[linear-gradient(to_bottom,rgba(00,00,00,0.7),rgba(00,00,00,1))] w-full h-full absolute top-0 left-0 z-20'></span>
+                                <img src={plan.preview} className='absolute top-0 left-0 w-full h-full object-cover z-10' />
                             </div>
                         ))}
                     </div>
@@ -235,7 +244,7 @@ const Home = () => {
                         ))}
                     </div>
 
-                    <button className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit" onClick={() => navigate("/plan/free")}>PRUEBA GRATIS</button>
+                    <CTA />
                 </div>
             </section>
 

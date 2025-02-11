@@ -167,17 +167,17 @@ const Calculator = () => {
                                 <div className="flex justify-between items-end gap-2">
                                     <p className="text-sm italic">Carbohidratos</p>
                                     <hr className="grow mb-1 border-lime-500 border-dashed" />
-                                    <span className="font-xl font-bold italic">{(calories * 0.5).toFixed(0).toString().replace('.', ',')}g</span>
+                                    <span className="font-xl font-bold italic">{((calories * 0.5) / 4).toFixed(1).toString().replace('.', ',')}g</span>
                                 </div>
                                 <div className="flex justify-between items-end gap-2">
                                     <p className="text-sm italic">Proteínas</p>
                                     <hr className="grow mb-1 border-lime-500 border-dashed" />
-                                    <span className="font-xl font-bold italic">{(calories * 0.35).toFixed(0).toString().replace('.', ',')}g</span>
+                                    <span className="font-xl font-bold italic">{((calories * 0.35) / 4).toFixed(1).toString().replace('.', ',')}g</span>
                                 </div>
                                 <div className="flex justify-between items-end gap-2">
                                     <p className="text-sm italic">Grasas Saludables</p>
                                     <hr className="grow mb-1 border-lime-500 border-dashed" />
-                                    <span className="font-xl font-bold italic">{(calories * 0.15).toFixed(0).toString().replace('.', ',')}g</span>
+                                    <span className="font-xl font-bold italic">{((calories * 0.15) / 9).toFixed(1).toString().replace('.', ',')}g</span>
                                 </div>
                             </div>
                         </div>
