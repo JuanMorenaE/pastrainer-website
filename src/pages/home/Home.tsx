@@ -269,7 +269,7 @@ const Home = () => {
                                 <h5 className='text-4xl mt-2 font-bold italic'>${Plans[plan].price.toLocaleString('es-UY')}</h5>
                             </div>
                             <p className='italic mt-8 font-bold uppercase'>INCLUYE ({Plans[plan].includes.length}):</p>
-                            <ul className='list-decimal pl-6 italic font-medium flex flex-col gap-3 mt-4 max-h-[230px] overflow-auto'>
+                            <ul className='list-decimal italic font-medium flex flex-col gap-3 mt-4 max-h-[230px] overflow-auto list-inside'>
                                 {Plans[plan].includes.map(i => (
                                     <li className='text-gray-300 text-sm' key={i}>{i}</li>
                                 ))}
