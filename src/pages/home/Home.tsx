@@ -8,6 +8,8 @@ import image from '../../assets/images/IMG_3806.webp'
 import cambio_1 from '../../assets/images/Cambio-fisico-Facu.webp'
 import cambio_2 from '../../assets/images/Cambio-fisico-manu.webp'
 import cambio_3 from '../../assets/images/Santi-cambio-fisico.webp'
+import cambio_4 from '../../assets/images/cambio_4.webp'
+import cambio_5 from '../../assets/images/cambio_5.webp'
 
 import plan_1 from '../../assets/images/IMG_3810.webp'
 import plan_2 from '../../assets/images/IMG_3809.webp'
@@ -92,7 +94,7 @@ const Home = () => {
         },
     ]
 
-    const testimonials = [cambio_1, cambio_2, cambio_3]
+    const testimonials = [cambio_1, cambio_2, cambio_3, cambio_4, cambio_5];
 
     const setPlansModal = (plan: number) => {
         setPlan(plan)
@@ -141,22 +143,16 @@ const Home = () => {
                             TRANSFORMA TU CUERPO, <br />
                             <span className="bg-lime-500 text-black">TRANSFORMA TU VIDA.</span>
                         </h1>
-                        <hr className="my-8 w-[100px]" />
 
-                        <p className="text-gray-300 my-4 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo quae distinctio, voluptates voluptatem facere architecto laudantium repudiandae. Recusandae, numquam!</p>
+                        <hr className="mt-8 w-[100px]" />
+
+                        <div className='py-8 gap-4 flex flex-col'>
+                            <p className="text-gray-300 text-sm"><strong>¡El cambio empieza hoy!</strong> Te invitamos a transformar tu vida y alcanzar tu máximo potencial. No hay límites cuando tienes la determinación y la estrategia adecuada.</p>
+
+                            <p className="text-gray-300 text-sm">Logremos juntos todos tus objetivos y construyamos la mejor versión de ti mismo. Con disciplina, constancia y el entrenamiento adecuado, todo es posible. <strong>A POR TODO.</strong> 🚀🔥</p>
+                        </div>
 
                         <CTA />
-
-                        <div className="mt-8 flex flex-wrap gap-8 gap-x-16">
-                            <div className="flex flex-col gap-2">
-                                <strong className="text-5xl font-extrabold italic">10<span className="text-4xl">+</span></strong>
-                                <p className="text-sm text-gray-300">Clientes Satisfechos</p>
-                            </div>
-                            <div className="flex flex-col gap-2">
-                                <strong className="text-5xl font-extrabold italic">30</strong>
-                                <p className="text-sm text-gray-300">Días para cambiar tu cuerpo.</p>
-                            </div>
-                        </div>
                     </div>
                     <div className='h-full flex items-center my-auto gap-4 lg:gap-12 text-2xl flex-row lg:flex-col'>
                         <hr className='hidden lg:block h-[50px] border-l border-y-0 border-lime-500 w-[1px]' />
@@ -171,7 +167,6 @@ const Home = () => {
 
             <section className="p-8 py-12 text-white max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12" id='about'>
                 <div className="h-full flex flex-col justify-center">
-                    <h3 className="italic text-lg uppercase text-lime-500">Lorem, ipsum dolor.</h3>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold italic">ACERCA <span className='text-black bg-lime-500 px-2'>DE MI</span></h2>
                     <hr className="my-8 border-lime-500 w-[100px]" />
 
@@ -197,11 +192,8 @@ const Home = () => {
 
             <section className="p-8 py-12 text-white max-w-[1600px] mx-auto" id='plans'>
                 <div className="h-full flex flex-col justify-center">
-                    <h3 className="italic text-lg uppercase text-lime-500">Lorem, ipsum dolor.</h3>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold italic">PLANIFICACIONES</h2>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold italic">PLANES</h2>
                     <hr className="my-8 border-lime-500 w-[100px]" />
-
-                    <p className="my-4 text-gray-300 max-w-[1000px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, fugit doloremque? Molestias debitis earum vero voluptas in eaque et omnis. Necessitatibus beatae voluptates dicta reprehenderit in quae cum quidem nihil!</p>
 
                     <div className='flex flex-wrap gap-12 py-8'>
                         {Plans.map(plan => (
@@ -230,11 +222,9 @@ const Home = () => {
 
             <section className="p-8 py-12 text-white max-w-[1600px] mx-auto" id='testimonials'>
                 <div className="h-full flex flex-col justify-center">
-                    <h3 className="italic text-lg uppercase text-lime-500">Lorem, ipsum dolor.</h3>
+                    <h3 className="italic text-lg uppercase text-lime-500">CASOS DE ÉXITO</h3>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold italic">TESTIMONIOS</h2>
                     <hr className="my-8 border-lime-500 w-[100px]" />
-
-                    <p className="my-4 text-gray-300 max-w-[1000px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, fugit doloremque? Molestias debitis earum vero voluptas in eaque et omnis. Necessitatibus beatae voluptates dicta reprehenderit in quae cum quidem nihil!</p>
 
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-8'>
                         {testimonials.map(t => (

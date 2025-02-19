@@ -10,10 +10,9 @@ const Calculator = () => {
 
     const [age, setAge] = useState('')
     const [weight, setWeight] = useState('')
-    const [size, setSize] = useState('')
     const [gender, setGender] = useState('')
     const [physicActivity, setPhysicActivity] = useState('')
-    const [objective, setObjective] = useState('')
+    // const [objective, setObjective] = useState('')
     const [error, setError] = useState("")
 
     useEffect(() => {
@@ -30,10 +29,6 @@ const Calculator = () => {
             setError("weight")
             return
         }
-        if (size == '' || isNaN(parseInt(size))) {
-            setError("size")
-            return
-        }
         if (gender == '') {
             setError("gender")
             return
@@ -42,15 +37,38 @@ const Calculator = () => {
             setError("physicActivity")
             return
         }
-        if (objective == '') {
-            setError("objective")
-            return
-        }
+        // if (objective == '') {
+        //     setError("objective")
+        //     return
+        // }
 
         setError('');
 
-        if (gender == "0") setCalories(((65 + (9.6 * parseFloat(weight.replace(',', '.')))) + ((1.8 * parseInt(size)) - (4.7 * parseInt(age))) * parseFloat(physicActivity)) + parseInt(objective));
-        else if (gender == "1") setCalories(((66 + (13.7 * parseFloat(weight.replace(',', '.')))) + ((5 * parseInt(size)) - (6.8 * parseInt(age))) * parseFloat(physicActivity)) + + parseInt(objective));
+        if (gender == "0") {
+
+            if (parseInt(age) <= 30)
+                setCalories(((486.6 + (14.818 * parseFloat(weight.replace(',', '.'))))) * parseFloat(physicActivity));
+
+            else if (parseInt(age) >= 31 || parseInt(age) <= 60)
+                setCalories(((845.6 + (8.126 * parseFloat(weight.replace(',', '.'))))) * parseFloat(physicActivity));
+
+            else if (parseInt(age) > 60)
+                setCalories(((658.5 + (9.082 * parseFloat(weight.replace(',', '.'))))) * parseFloat(physicActivity));
+
+        }
+
+        else if (gender == "1") {
+
+            if (parseInt(age) <= 30)
+                setCalories(((692.2 + (15.057 * parseFloat(weight.replace(',', '.'))))) * parseFloat(physicActivity));
+
+            else if (parseInt(age) >= 31 || parseInt(age) <= 60)
+                setCalories(((873.1 + (11.472 * parseFloat(weight.replace(',', '.'))))) * parseFloat(physicActivity));
+
+            else if (parseInt(age) > 60)
+                setCalories(((587.7 + (11.711 * parseFloat(weight.replace(',', '.'))))) * parseFloat(physicActivity));
+
+        }
 
         setModal(true);
 
@@ -66,10 +84,11 @@ const Calculator = () => {
                         <span className="bg-lime-500 text-black">DE MACROS</span>
                     </h1>
                     <hr className="my-8 w-[100px]" />
-                    <p className="text-gray-300 my-4 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure illo quae distinctio, voluptates voluptatem facere architecto laudantium repudiandae. Recusandae, numquam!</p>
+                    <p className="text-gray-300 text-sm">Una calculadora de calorías es una herramienta que ayuda a estimar la cantidad de calorías que consumes o gastas en función de diferentes factores, como alimentos ingeridos, nivel de actividad física y metabolismo basal.
+                    </p>
                 </div>
                 <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-4">
                             <span className="italic font-medium">EDAD</span>
                             <input type="text" onChange={(e) => { setAge(e.target.value) }} id="age" className={"w-full border p-3 outline-none " + (error == "age" ? "border-red-400" : "border-gray-300")} />
@@ -79,13 +98,6 @@ const Calculator = () => {
                             <div className="relative flex items-center">
                                 <input type="text" onChange={(e) => { setWeight(e.target.value) }} id="weight" className={"border w-full border-gray-300 p-3 outline-none pr-12 " + (error == "weight" ? "border-red-400" : "border-gray-300")} />
                                 <span className="absolute right-4">kg</span>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-4">
-                            <span className="italic font-medium">ALTURA</span>
-                            <div className="relative flex items-center">
-                                <input type="text" onChange={(e) => { setSize(e.target.value) }} id="size" className={"w-full border border-gray-300 p-3 outline-none pr-12 " + (error == "size" ? "border-red-400" : "border-gray-300")} />
-                                <span className="absolute right-4">cm</span>
                             </div>
                         </div>
                     </div>
@@ -128,7 +140,7 @@ const Calculator = () => {
                             </label>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-4">
+                    {/* <div className="flex flex-col gap-4">
                         <span className="italic font-medium">OBJETIVO</span>
                         <div className="flex flex-col gap-4">
                             <label htmlFor="objective_definition" className={"flex gap-4 border border-gray-300 p-4 items-center cursor-pointer " + (error == "objective" ? "border-red-400" : "border-gray-300")}>
@@ -144,7 +156,7 @@ const Calculator = () => {
                                 <h3 className="font-medium italic">VOLUMEN</h3>
                             </label>
                         </div>
-                    </div>
+                    </div> */}
                     <button onClick={() => showResults()} className="px-3 mt-6 py-2 bg-lime-500 text-black font-extrabold text-lg italic cursor-pointer hover:bg-lime-600 transition-colors w-fit">CALCULAR</button>
                 </form>
             </section>

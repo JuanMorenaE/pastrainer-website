@@ -30,7 +30,7 @@ const Header = () => {
                             <Link reloadDocument to="/#about" className="hover:text-lime-500 transition-colors menu-item">Acerca de Mi</Link>
                         </li>
                         <li>
-                            <Link reloadDocument to="/#plans" className="hover:text-lime-500 transition-colors menu-item">Planificaciones</Link>
+                            <Link reloadDocument to="/#plans" className="hover:text-lime-500 transition-colors menu-item">Planes</Link>
                         </li>
                         <li>
                             <Link reloadDocument to="/#testimonials" className="hover:text-lime-500 transition-colors menu-item">Testimonios</Link>
