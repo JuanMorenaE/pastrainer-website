@@ -37,7 +37,6 @@ const Home = () => {
             id: "1mes",
             name: "1 MES",
             description: "Programa Básico",
-            price: 1700,
             includes: [
                 "Planificación personalizada acorde a tus objetivos.",
                 "Videos explicativos de los ejercicios y técnicas de realización.",
@@ -48,13 +47,12 @@ const Home = () => {
                 "Seguimiento y motivación semanal.",
             ],
             preview: plan_1,
-            link: "https://wa.link/pfqz9r",
+            link: "https://wa.me/+59892002729",
         },
         {
             id: "3meses",
             name: "3 MESES",
             description: "Programa Completo",
-            price: 5000,
             includes: [
                 "Planificación personalizada acorde a tus objetivos.",
                 "Calculadora de macronutrientes.",
@@ -69,13 +67,12 @@ const Home = () => {
                 "Llamadas y reportes semanales.",
             ],
             preview: plan_2,
-            link: "https://wa.link/pfqz9r",
+            link: "https://wa.me/+59892002729",
         },
         {
             id: "6meses",
             name: "6 MESES",
             description: "Programa Completo",
-            price: 9000,
             includes: [
                 "Planificación personalizada acorde a tus objetivos.",
                 "Calculadora de macronutrientes.",
@@ -90,7 +87,7 @@ const Home = () => {
                 "Llamadas y reportes semanales.",
             ],
             preview: plan_3,
-            link: "https://wa.link/pfqz9r",
+            link: "https://wa.me/+59892002729",
         },
     ]
 
@@ -206,7 +203,6 @@ const Home = () => {
                                         </h4>
                                     </div>
                                     <div className='flex flex-col w-full'>
-                                        <h5 className='text-4xl font-bold italic'>${plan.price.toLocaleString('es-UY')}</h5>
                                         <p className='text-gray-300'>{plan.description}</p>
                                     </div>
                                 </div>
@@ -256,7 +252,6 @@ const Home = () => {
                                     PLAN <br />
                                     <span className='bg-lime-500 text-black text-4xl px-2'>{Plans[plan].name}</span>
                                 </h4>
-                                <h5 className='text-4xl mt-2 font-bold italic'>${Plans[plan].price.toLocaleString('es-UY')}</h5>
                             </div>
                             <p className='italic mt-8 font-bold uppercase'>INCLUYE ({Plans[plan].includes.length}):</p>
                             <ul className='list-decimal italic font-medium flex flex-col gap-3 mt-4 max-h-[230px] overflow-auto list-inside'>
